@@ -21,21 +21,34 @@ public class School {
         for (Student student : students) {
             if (student.getIdStudent() == id) {
                 System.out.println("Student Found: " + student.getFirstName() + " " + student.getLastName());
-            }return student;
-        }
-           return null;
+                return student;
+            }
+        }return null;
+
     }
 
-public boolean removeStudent(int id) {
+  public void removeStudent(int id) {
 
-        for (Student student : students) {
-            if (student.getIdStudent() == id) {
-                students.remove(student);
-                System.out.println("Student Removed: " + student.getFirstName() + " " + student.getLastName());
-                return true;
-            }
-        }return false;
+        Student student = findStudentById(id);
+        if (student != null) {
+            students.remove(student);
+            System.out.println("Student Removed: " + student.getFirstName() + " " + student.getLastName());
+        }else {
+            System.out.println("Student Not Found:");
+        }
+
+
+
 }
+
+public void printAllStudents() {
+        for (Student student : students) {
+            System.out.println(student);
+        }
+}
+
+
+
 
 
 

@@ -4,13 +4,13 @@ import java.util.Objects;
 
 public class Student {
     private int idStudent;
-    private String FirstName;
-    private String LastName;
+    private String firstName;
+    private String lastName;
 
     public Student(int idStudent, String firstName, String lastName) {
         this.idStudent = idStudent;
-        FirstName = firstName;
-        LastName = lastName;
+        this.firstName = firstName;
+        this.lastName = lastName;
     }
 
     public int getIdStudent() {
@@ -22,39 +22,39 @@ public class Student {
     }
 
     public String getFirstName() {
-        return FirstName;
+        return firstName;
     }
 
     public void setFirstName(String firstName) {
-        FirstName = firstName;
+        this.firstName = firstName;
     }
 
     public String getLastName() {
-        return LastName;
+        return lastName;
     }
 
     public void setLastName(String lastName) {
-        LastName = lastName;
+        this.lastName = lastName;
     }
 
     @Override
     public boolean equals(Object o) {
         if (o == null || getClass() != o.getClass()) return false;
         Student student = (Student) o;
-        return idStudent == student.idStudent && Objects.equals(FirstName, student.FirstName) && Objects.equals(LastName, student.LastName);
+        return idStudent == student.idStudent && Objects.equals(firstName, student.firstName) && Objects.equals(lastName, student.lastName);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(idStudent, FirstName, LastName);
+        return Objects.hash(idStudent, firstName, lastName);
     }
 
     @Override
     public String toString() {
         return "Student{" +
                 "idStudent=" + idStudent +
-                ", FirstName='" + FirstName + '\'' +
-                ", LastName='" + LastName + '\'' +
+                ", FirstName='" + firstName + '\'' +
+                ", LastName='" + lastName + '\'' +
                 '}';
     }
 }

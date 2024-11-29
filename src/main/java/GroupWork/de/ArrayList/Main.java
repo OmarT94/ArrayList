@@ -16,23 +16,30 @@ public class Main {
         System.out.println("****************************");
 
         School school =new School();
-        school.addStudent(new Student(4,"Omar2","Tamr2"));
-        school.addStudent(new Student(5,"Emre2","Alak2"));
-        school.addStudent(new Student(6,"Altan_Der_Berliner2","Güven2"));
+        school.addStudent(new Student(1,"Omar2","Tamr2"));
+        school.addStudent(new Student(2,"Emre2","Alak2"));
+        school.addStudent(new Student(3,"Altan_Der_Berliner2","Güven2"));
 
-
-        Student foundSt=school.findStudentById(0);
+        System.out.println("************************************");
+        //Find Student BY ID
+        Student foundSt=school.findStudentById(1);
         if(foundSt!=null){
             System.out.println("Founded " + foundSt);
-        }else System.out.println("Student not found");
+        }else
+        {System.out.println("Student not found");
         System.out.println("*********************");
-
-
-        System.out.println(school.removeStudent(1));
-
-        for (Student s : student) {
-            System.out.println(s);
         }
+
+
+        //Remove Student By id!
+        System.out.println("Before Removing");
+        school.printAllStudents();
+        school.removeStudent(2);
+        System.out.println("After Removing");
+
+        school.printAllStudents();
+
+
 
 
 
